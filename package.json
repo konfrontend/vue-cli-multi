@@ -1,0 +1,32 @@
+{
+  "name": "vue-cli-multi",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve:loadster": "vue-cli-service serve src/Loadster/main.js --mode loadster.development",
+    "serve:speedway": "vue-cli-service serve src/Speedway/main.js --mode speedway.development",
+    "build:loadster": "vue-cli-service build src/Loadster/main.js --mode loadster.production",
+    "build:speedway": "vue-cli-service build src/Speedway/main.js --mode speedway.production",
+    "build:speedway:no-clean": "vue-cli-service build src/Speedway/main.js --mode speedway.production --no-clean",
+    "build:all": "npm run build:loadster --no-clean && npm run build:speedway:no-clean",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
