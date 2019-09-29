@@ -1,13 +1,15 @@
 const path = require('path')
 
-console.log(process.env.INDEX_PATH, process.env.BASE_URL)
-
 module.exports = {
-  assetsDir: 'assets',
-  indexPath: process.env.INDEX_PATH,
-  publicPath: process.env.BASE_URL,
+  assetsDir: `${process.env.APP_NAME}/assets`,
+  indexPath: `${process.env.APP_NAME}/index.html`,
+  publicPath: `/${process.env.APP_NAME}/`,
   devServer: {
     port: 8082
+  },
+  chainWebpack: config => {
+    config.plugins.delete('prefetch')
+    config.plugins.delete('preload')
   },
   configureWebpack: {
     resolve: {

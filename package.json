@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve:loadster": "vue-cli-service serve src/Loadster/main.js --mode loadster.development",
-    "serve:speedway": "vue-cli-service serve src/Speedway/main.js --mode speedway.development",
-    "build:loadster": "vue-cli-service build src/Loadster/main.js --mode loadster.production",
-    "build:speedway": "vue-cli-service build src/Speedway/main.js --mode speedway.production",
-    "build:speedway:no-clean": "vue-cli-service build src/Speedway/main.js --mode speedway.production --no-clean",
-    "build:all": "npm run build:loadster --no-clean && npm run build:speedway:no-clean",
+    "serve:loadster": "APP_NAME=loadster vue-cli-service serve src/Loadster/main.js",
+    "serve:speedway": "APP_NAME=speedway vue-cli-service serve src/Speedway/main.js",
+    "build:loadster": "APP_NAME=loadster vue-cli-service build src/Loadster/main.js --no-clean",
+    "build:speedway": "APP_NAME=speedway vue-cli-service build src/Speedway/main.js --no-clean",
+    "build:all": "npm run build:loadster && npm run build:speedway",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
